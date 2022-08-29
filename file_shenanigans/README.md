@@ -18,7 +18,7 @@ Freckles is a 1337 haxor, he hides his flags in his selfies.
 
 ## Challenge 5: pRoBlEmS wItH cApItAlS
 Freckles hid his flag but he thinks something went wrong with the file, a typo maybe?
-### Flag: frecklesCon22{c4p1t411z4t10n}
+### Flag: frecklesCon22{c4p1t4l1z4t10n}
 
 ## Challege 6: Freckle's Selfie
 Freckles took this adorable selfie, but the file seems bigger than it should be.....

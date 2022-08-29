@@ -1,26 +1,28 @@
 import socket
 from _thread import *
+import hashlib
 
 host = '127.0.0.1'
 port = 9090
 
 def client_handler(connection):
-    connection.send(str.encode("Be Friendly. Be Curious. Be Like _______\n"))
-    acceptable_answers = ['Freckles', 'freckles', 'FRECKLES']
+    connection.send(str.encode("ENTER PASSWORD: "))
     while True:
         data = connection.recv(256)
-        message = data.decode('utf-8').strip("\n")
-        if message == 'BYE':
-            break
-        if message in acceptable_answers:
-            message = "Yay! here's your flag:\nfrecklesCon22{c4t5_0n_th3_n3t}\n"
+        input_message = data.decode('utf-8').strip("\n")
+        pin = '931459'
+        input_message = pin + '_' + input_message
+        hashed_password_object = hashlib.sha256(input_message.encode())
+        hashed_password = hashed_password_object.hexdigest()
+        if hashed_password == 'b79380397289a3965c0733847e881b39e176e035f1c8c40b9fb71a3187be2093':
+            message = "Yay! here's your flag:\nfrecklesCon22{s4lty_p455w0rd5}\n"
             reply = f'Server: {message}'
             connection.sendall(str.encode(reply))
             break
         else:
-            message = "hmm not quite. try again\n"
-        reply = f'Server: {message}'
-        connection.sendall(str.encode(reply))
+            message = f"NO TREATS FOR YOU! TRY AGAIN.\n"
+            reply = f'Server: {message}'
+            connection.sendall(str.encode(reply))
     connection.close()
 
 def accept_connections(ServerSocket):
