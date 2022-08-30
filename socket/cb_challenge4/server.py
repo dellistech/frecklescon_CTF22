@@ -1,8 +1,8 @@
 import socket
 from _thread import *
 
-host = '127.0.0.1'
-port = 9090
+host = '0.0.0.0'
+port = 80
 
 def client_handler(connection):
     connection.send(str.encode("Enter 3 word password, each word separated by underscore _: \n"))
@@ -11,7 +11,7 @@ def client_handler(connection):
         input_message = data.decode('utf-8').strip("\n")
         if input_message == 'BYE':
             break
-        if input_message == 'freckles_treats_pcyber':
+        if input_message == 'frecklestreatspcyber':
             message = "Yay! here's your flag:\nfrecklesCon22{d1ct10n4ry_4774ck5}\n"
             reply = f'Server: {message}'
             connection.sendall(str.encode(reply))

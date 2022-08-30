@@ -1,8 +1,8 @@
 import socket
 from _thread import *
 
-host = '127.0.0.1'
-port = 9090
+host = '0.0.0.0'
+port = 80
 
 def client_handler(connection):
     connection.send(str.encode("Be Friendly. Be Curious. Be Like _______\n"))

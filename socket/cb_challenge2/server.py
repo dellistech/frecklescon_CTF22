@@ -1,13 +1,13 @@
 import socket
 from _thread import *
 
-host = '127.0.0.1'
-port = 9090
+host = '0.0.0.0'
+port = 80
 
 def client_handler(connection):
     connection.send(str.encode("ENTER 3 DIGIT PIN FOR FRECKLES TREAT VAULT. \n LEADING ZEROES ARE VALD INPUT (000 - 999):\n"))
     while True:
-        data = connection.recv(3)
+        data = connection.recv(4)
         input_message = data.decode('utf-8').strip("\n")
         if input_message == 'BYE':
             break
