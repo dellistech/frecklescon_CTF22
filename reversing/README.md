@@ -24,5 +24,5 @@ Freckles realizes he needs to protect his tech from 1337 H4XORZ like you, so he 
 
 ### Challenge 4: Memory Game
 Freckles thinks this challenge would be a lot easier if he knew how to read...
-### Password: 
-### Flag: 
+### Password: frexHaxThePlanet
+### Flag: frecklesCon22{r34d_fr0m_m3m0ry}

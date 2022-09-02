@@ -49,7 +49,7 @@ readingdone:
 checkpasscode:
     xor eax, eax
     xor ecx, ecx
-    mov al, byte[input+ecx]
+        mov al, byte[input+ecx]
     cmp al, 0x66
     jne wrong
     inc ecx
@@ -62,43 +62,11 @@ checkpasscode:
     jne wrong
     inc ecx
     mov al, byte[input+ecx]
-    cmp al, 0x63
+    cmp al, 0x78
     jne wrong
     inc ecx
     mov al, byte[input+ecx]
-    cmp al, 0x6b
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x73
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x4c
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x75
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x76
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x7a
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x54
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x72
-    jne wrong
-    inc ecx
-    mov al, byte[input+ecx]
-    cmp al, 0x65
+    cmp al, 0x48
     jne wrong
     inc ecx
     mov al, byte[input+ecx]
@@ -106,17 +74,50 @@ checkpasscode:
     jne wrong
     inc ecx
     mov al, byte[input+ecx]
-    cmp al, 0x74
+    cmp al, 0x78
     jne wrong
     inc ecx
     mov al, byte[input+ecx]
-    cmp al, 0x7a
+    cmp al, 0x54
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x68
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x65
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x50
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x6c
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x61
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x6e
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x65
+    jne wrong
+    inc ecx
+    mov al, byte[input+ecx]
+    cmp al, 0x74
     jne wrong
     inc ecx
     jmp success
 
 success:
-    mov eax, 42
+    call flag_decrypter
+    mov eax, 50
     push msg7
     push eax
     call output
@@ -129,18 +130,16 @@ flag_decrypter:
     xor ecx, ecx
 flag_decrypter_loop:
     mov al, byte[flag+ecx]
-    xor al, 0x66
+    xor al, 0x42
     mov byte[flag+ecx],al
     inc ecx
-    cmp ecx, 26
-    jge flag_decrypter_print
+    cmp ecx, 31
+    jge flag_decrypter_exit
     jmp flag_decrypter_loop
-flag_decrypter_print:
-    mov eax, 28
-    push flag
-    push eax
-    call output
-    jmp exit
+flag_decrypter_exit:
+    mov esp, ebp
+    pop ebp
+    ret
 
 wrong:
     mov eax, 7
@@ -175,12 +174,12 @@ exit:
     ret
 
 section .data
-msg1 db "Starting Program: Freckles Treat Vault 3",0x0A,0
+msg1 db "Starting Program: Freckles Treat Vault 4",0x0A,0
 msg5 db "Please enter Passcode:",0x0A,0
 msg6 db "WRONG!",0x0A,0
-msg7 db "Correct! BUT NO FLAG FOR YOU! - Freckles",0x0A,0
+msg7 db "Correct! BUT NO FLAG FOR YOU!...AGAIN - Freckles",0x0A,0
 msg8 db "EXIT",0x0A,0
-flag db 0x00,0x14,0x03,0x05,0x0d,0x0a,0x03,0x15,0x25,0x09,0x08,0x54,0x54,0x1d,0x0c,0x13,0x0b,0x16,0x39,0x52,0x14,0x56,0x13,0x08,0x02,0x1b,0x0A,0
+flag db 0x24,0x30,0x27,0x21,0x29,0x2e,0x27,0x31,0x01,0x2d,0x2c,0x70,0x70,0x39,0x30,0x71,0x76,0x26,0x1d,0x24,0x30,0x72,0x2f,0x1d,0x2f,0x71,0x2f,0x72,0x30,0x3b,0x3f,0x0A,0
 
 
 
