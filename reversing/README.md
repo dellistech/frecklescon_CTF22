@@ -11,7 +11,7 @@ Freckles, being a cyber savvy dog, put his flag in a 32 bit binary written he wr
 
 ### Password: fr3ckl35c0nrul35
 ### Flag: frecklesCon22{fr3ckl35c0nrul35}
-
+From Hex
 ## Challenge 2: We'll Do It Live!
 Freckles, being the little jerk he is, decided to hide the flag in the binary again, but this time getting the passcode right may not be enough...
 ### Password: freckshax4treats 
@@ -26,3 +26,9 @@ Freckles realizes he needs to protect his tech from 1337 H4XORZ like you, so he 
 Freckles thinks this challenge would be a lot easier if he knew how to read...
 ### Password: frexHaxThePlanet
 ### Flag: frecklesCon22{r34d_fr0m_m3m0ry}
+
+
+### Challenge 5: No Shortcuts
+Freckles joined with the legendary and mysterious pCyber to figure out how to best protect his tech! He went with a WHOPPING 32 character passcode utilizing [a-z][A-Z][0-9]! To get flag passcode and some Assembly required! No proof of purchase necessary! Void where prohibited.  
+### Password: frexGetTreatzAndHackAllTheThings
+### Flag: frecklesCon22{frex_hax_4_treatz}
