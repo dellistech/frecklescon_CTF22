@@ -1,0 +1,8 @@
+Freckles wants you to find some SomeSuperDuperSsecretKey. Because he's such a good boy, he's given you everything you need right here on this page:
+
+Algorithm: AES-192-CBC
+
+Cyphertext: a34f797d8fea1e41b2f4d3a4c67b9220bca43865620e15db2ffa477f8d178962
+
+IV: d1 a8 45 64 56 35 2a 15 66 79 7d 9f 2c 47 dd c3
+
